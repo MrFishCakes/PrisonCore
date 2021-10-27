@@ -2,7 +2,6 @@ package dev.mrfishcakes.prisoncore.registry;
 
 import dev.mrfishcakes.crunchy.enchantment.CustomEnchantment;
 import dev.mrfishcakes.prisoncore.PrisonCore;
-import dev.mrfishcakes.prisoncore.enchantments.EnchantmentListener;
 import org.bukkit.Bukkit;
 import org.bukkit.NamespacedKey;
 import org.jetbrains.annotations.NotNull;
