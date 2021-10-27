@@ -1,0 +1,7 @@
+name: Prison Core
+version: '${project.version}'
+main: dev.mrfishcakes.prisoncore.PrisonCore
+api-version: 1.17
+authors: [ Fallen, MrFishCakes ]
+description: Core plugin for prison
+website: mrfishcakes.dev
