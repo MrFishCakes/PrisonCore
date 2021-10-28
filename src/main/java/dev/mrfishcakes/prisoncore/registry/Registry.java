@@ -36,8 +36,8 @@ public interface Registry<T> {
 
         @Override
         @NotNull
-        public Optional<CustomEnchantment> get(@NotNull String key) {
-            return Optional.ofNullable(registered.get(PrisonCore.key(key)));
+        public Optional<CustomEnchantment> get(@NotNull Object value) {
+            return Optional.ofNullable(registered.get(PrisonCore.key((String) value)));
         }
 
         @Override
@@ -51,7 +51,7 @@ public interface Registry<T> {
     void register(@NotNull T object);
 
     @NotNull
-    Optional<T> get(@NotNull String key);
+    Optional<T> get(@NotNull Object value);
 
     default void clear() {
     }
