@@ -9,16 +9,17 @@
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>Prison Core</name>
+    <name>PrisonCore</name>
 
     <description>Core plugin for prison</description>
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>16</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <url>mrfishcakes.dev</url>
 
     <build>
+        <finalName>PrisonCore-${project.version}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

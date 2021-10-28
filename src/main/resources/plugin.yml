@@ -1,4 +1,4 @@
-name: Prison Core
+name: ${project.name}
 version: '${project.version}'
 main: dev.mrfishcakes.prisoncore.PrisonCore
 api-version: 1.17
