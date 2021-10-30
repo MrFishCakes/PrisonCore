@@ -5,3 +5,8 @@ api-version: 1.17
 authors: [ Fallen, MrFishCakes ]
 description: Core plugin for prison
 website: mrfishcakes.dev
+commands:
+  givekey:
+    description: Giving crate keys to players
+  createcase:
+    description: Create a case
