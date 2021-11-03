@@ -61,14 +61,8 @@
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
         <repository>
-            <id>github</id>
-            <url>https://maven.pkg.github.com/MrFishCakes/Crunchy</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
+            <id>mrfishcakes</id>
+            <url>http://138.201.100.162:81/releases/</url>
         </repository>
     </repositories>
 
