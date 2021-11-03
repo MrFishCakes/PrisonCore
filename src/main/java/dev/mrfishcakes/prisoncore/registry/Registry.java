@@ -2,6 +2,7 @@ package dev.mrfishcakes.prisoncore.registry;
 
 import dev.mrfishcakes.crunchy.enchantment.CustomEnchantment;
 import dev.mrfishcakes.prisoncore.PrisonCore;
+import dev.mrfishcakes.prisoncore.enchantments.EnchantmentListener;
 import org.bukkit.Bukkit;
 import org.bukkit.NamespacedKey;
 import org.jetbrains.annotations.NotNull;
@@ -11,12 +12,20 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.logging.Level;
 
-public interface Registry<T> {
+public abstract class Registry<T> {
 
-    Registry<CustomEnchantment> ENCHANTMENT = new Registry<>() {
+    private Registry() {}
 
-        private final PrisonCore plugin = PrisonCore.getPlugin(PrisonCore.class);
-        private Map<NamespacedKey, CustomEnchantment> registered = new HashMap<>();
+    public static final Registry<CustomEnchantment> ENCHANTMENT = new Registry<>() {
+
+        private final PrisonCore plugin;
+        private Map<NamespacedKey, CustomEnchantment> registered;
+
+        {
+            this.plugin = PrisonCore.getPlugin(PrisonCore.class);
+            this.registered = new HashMap<>();
+            Bukkit.getPluginManager().registerEvents(new EnchantmentListener(), plugin);
+        }
 
         @Override
         public void register(@NotNull CustomEnchantment enchantment) {
@@ -48,12 +57,13 @@ public interface Registry<T> {
 
     };
 
-    void register(@NotNull T object);
+    public void register(@NotNull T object) {}
+
+    public void unregister(@NotNull T object) {}
 
     @NotNull
-    Optional<T> get(@NotNull Object value);
+    public abstract Optional<T> get(@NotNull Object value);
 
-    default void clear() {
-    }
+    public void clear() {}
 
 }
